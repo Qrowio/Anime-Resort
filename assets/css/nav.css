@@ -1,0 +1,177 @@
+.navbar-btn {
+  font-size: 22px;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 40px;
+  font-weight: 200;
+  background: #9A92FF;
+  color: #fff;
+}
+
+.nav-brand {
+  margin-right: 3rem;
+}
+
+.nav-link {
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 1;
+  margin-right: 2rem;
+  color: #ffffff!important;
+}
+
+.nav-brand {
+  margin-right: 4rem;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+@media (min-width:1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1400px;
+  }
+}
+
+.nav-link:hover {
+  color: #b8b8b8!important;
+}
+
+.navbar-btn:hover {
+  background: #7068d7;
+  color: #b8b8b8;
+}
+
+.fa-search {
+  font-size: 28px;
+  background: #7068d7;
+  border-radius: 100%;
+  padding: 14px;
+  color: #fff;
+}
+
+input:focus {
+  outline: #7068d7;
+}
+
+.section-heading {
+  color: #fff;
+  font-weight: 400;
+  font-size: 21px;
+  letter-spacing: 0.4px;
+}
+
+.section-heading span {
+  float: right;
+  color: #9a92ff;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: #b8b8b8;
+}
+
+.anime-title {
+  color: #b8b8b8;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.top-h1 {
+  font-size: 18px;
+  margin-top: 0.5rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.top-h1 span {
+  margin-left: 5px;
+  color: #b8b8b8;
+}
+
+.anime-name-romaji {
+  font-size: 64px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 5rem;
+}
+
+.anime-name-english {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.anime-desc {
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  margin-top: 3.5rem;
+  color: #C0C0C0;
+  line-height: 25px;
+}
+
+.statistic1 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0px;
+}
+
+.statistic1-div {
+  padding: 5PX 15PX;
+  border-radius: 8px;
+  padding-bottom: 10PX;
+  background: #332e4b;
+  margin-bottom: 1rem;
+}
+
+.statistic1 span {
+  color: #9a92ff;
+}
+
+.statistic1-div.no-bg {
+  background: none;
+}
+
+.adiv {
+  margin-right: 30px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 1.6rem;
+}
+
+.navbar-toggler-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(121deg) brightness(108%) contrast(103%);
+}
+
+.navbar-toggler {
+  opacity: 1!important;
+  color: #fff!important;
+  border-color: #fff!important;
+}
+
+.navbar-collapse {
+  text-align: center;
+  margin: 20px;
+}
+
+@media (min-width: 300px) {
+  input {
+    max-width: 105%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .yes {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width: 1920px) {
+  .yes {
+    margin-top: 1rem;
+  }
+}
+

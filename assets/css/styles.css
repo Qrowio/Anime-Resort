@@ -1,0 +1,69 @@
+body {
+  background: #2a263d;
+  padding-bottom: 3rem;
+}
+
+nav {
+}
+
+header {
+  background: url("../../assets/img/Group%2012.png") no-repeat fixed;
+  background-size: 100%;
+  width: 100%;
+  height: 39%;
+  z-index: -1;
+  top: 0;
+  position: absolute;
+}
+
+.anime-list-col {
+  margin: auto;
+  max-width: 250px;
+  padding: 0px;
+  top: initial;
+}
+
+.intro-div {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.intro-h1 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 48px;
+  letter-spacing: 1px;
+}
+
+.intro-h1 span {
+  color: #9A92FF;
+}
+
+.intro-desc {
+  font-size: 22px;
+  font-weight: 300;
+  color: #b8b8b8;
+  max-width: 580px;
+  margin: auto;
+  line-height: 35px;
+  margin-top: 1rem;
+}
+
+input {
+  background: #332E4B;
+  border: none;
+  font-size: 26px;
+  padding: 20px 100px 20px 20px;
+  border-radius: 100px;
+  color: #fff!important;
+  width: 800px;
+}
+
+.search-btn {
+  border: none;
+  position: absolute;
+  right: 0px;
+  background: none;
+  top: 10px;
+}
+
