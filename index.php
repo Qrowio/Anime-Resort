@@ -1,10 +1,26 @@
+<?php
+$ch = curl_init();
+
+if(isset($_POST['submit'])){
+    $name = $_POST['anime'];
+    $title = preg_replace('/\s+/', '%20', $name);
+    curl_setopt($ch, CURLOPT_URL, "https://kitsu.io/api/edge/anime/?include=episodes&filter[text]={$title}");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $output = curl_exec($ch);
+    $decode = json_decode($output, true);
+    // echo $decode['data'][0]['id'];
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>animehub</title>
+    <title>Anime Hub - Index</title>
+    <link rel="icon" type="image/png" href="./assets/img/logo.png">
+    <meta name="description" content="Pull information related to an anime  you are interested in!">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -29,9 +45,9 @@
         <div id="navcol-1" class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
-            </ul><button class="btn navbar-btn" type="button">Discord</button>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/Qrowio/Anime-Resort">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://discord.gg/qrow/">Community</a></li>
+            </ul><a href="https://discord.gg/qrow/"><button class="btn navbar-btn" type="button">Discord</button></a>
         </div>
     </div>
 </nav>
@@ -42,7 +58,9 @@
     <div class="container" style="margin-top: 5rem;">
         <div class="row">
             <div class="col-md-12 col-lg-10 col-xl-9 col-xxl-7 offset-xxl-0" style="margin: auto;">
-                <div style="position: relative;"><button class="search-btn" type="button"><i class="fa fa-search"></i></button><input type="text" placeholder="Search Anime...">
+                <form action="anime.php" method="POST">
+                <div style="position: relative;"><button class="search-btn" name="submit" type="submit" type="button"><i class="fa fa-search"></i></button><input type="text" name="anime" placeholder="Search Anime...">
+                </form>
                     <h1 class="top-h1">Top Searches:<span>One Piece, Demon Slayer, Dragon Ball Z, Erased, One Punch Man, Attack On Titan</span></h1>
                 </div>
             </div>
