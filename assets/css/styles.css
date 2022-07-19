@@ -23,6 +23,13 @@ header {
   top: initial;
 }
 
+.anime-title{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .intro-div {
   margin-top: 4rem;
   text-align: center;

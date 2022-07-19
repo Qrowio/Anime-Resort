@@ -4,13 +4,13 @@ $ch = curl_init();
 if(isset($_POST['submit'])){
     $name = $_POST['anime'];
     $title = preg_replace('/\s+/', '%20', $name);
-    curl_setopt($ch, CURLOPT_URL, "https://kitsu.io/api/edge/anime/?include=episodes&filter[text]={$title}");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    $output = curl_exec($ch);
-    $decode = json_decode($output, true);
-    // echo $decode['data'][0]['id'];
-
 }
+
+// JSON REQUEST FOR THE MOST POPULAR ANIME.
+curl_setopt($ch, CURLOPT_URL, "https://kitsu.io/api/edge/trending/anime");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+$output = curl_exec($ch);
+$decode = json_decode($output, true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,31 +75,19 @@ if(isset($_POST['submit'])){
     </div>
     <div class="container" style="margin-top: 0.8rem;">
         <div class="row" style="padding: 0px;">
-            <div class="col-md-3 col-xxl-12 offset-xxl-0 anime-list-col">
-                <div><img src="assets/img/i.png" width="258" height="408">
-                    <h1 class="anime-title">One Piece</h1>
-                </div>
-            </div>
-            <div class="col-md-3 col-xxl-12 offset-xxl-0 anime-list-col">
-                <div><img src="assets/img/69.png" width="258" height="408">
-                    <h1 class="anime-title">Kawaii dake ja Nai Shikimori...<br></h1>
-                </div>
-            </div>
-            <div class="col-md-3 col-xxl-12 offset-xxl-0 anime-list-col">
-                <div><img src="assets/img/68.png" width="258" height="408">
-                    <h1 class="anime-title">Lycosis Recoil<br></h1>
-                </div>
-            </div>
-            <div class="col-md-3 col-xxl-12 offset-xxl-0 anime-list-col">
-                <div><img src="assets/img/67.png" width="258" height="408">
-                    <h1 class="anime-title">Engage Kiss<br></h1>
-                </div>
-            </div>
-            <div class="col-md-3 col-xxl-12 offset-xxl-0 anime-list-col">
-                <div><img src="assets/img/65.png" width="258" height="408">
-                    <h1 class="anime-title">Spy x Family<br></h1>
-                </div>
-            </div>
+            <?php
+            $x = 0;
+            while($x < 5){
+                echo '<div class="col-md-3 col-xxl-12 offset-xxl-0 anime-list-col">';
+                echo '<a style="text-decoration: none!important;"href="./anime.php?anime='. $decode['data'][$x]['attributes']['titles']['en'] . '">';
+                echo '<div><img src="'. $decode['data'][$x]['attributes']['posterImage']['original'] .'" width="258" height="408">';
+                echo '<h1 class="anime-title">' . $decode['data'][$x]['attributes']['titles']['en'] . '</h1>';
+                echo '</a>';
+                echo '</div>';
+                echo '</div>';
+                $x++;
+            }
+            ?>
         </div>
     </div>
     <div class="container" style="margin-top: 10rem;">

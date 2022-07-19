@@ -1,13 +1,14 @@
 <?php
 $ch = curl_init();
-if(($_POST['anime'])){
-    $title = $_POST['anime'];
+if(($_REQUEST['anime'])){
+    $title = $_REQUEST['anime'];
     $title = preg_replace('/\s+/', '%20', $title);
     curl_setopt($ch, CURLOPT_URL, "https://kitsu.io/api/edge/anime/?include=episodes&filter[text]={$title}");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     $output = curl_exec($ch);
     $decode = json_decode($output, true);
 
+    
     if(empty($decode['data'][0]['attributes']['titles']['en_us'])){
         $language = $decode['data'][0]['attributes']['titles']['en'];
     } else if(empty($decode['data'][0]['attributes']['titles']['en'])){
@@ -27,9 +28,8 @@ if(($_POST['anime'])){
     } else {
         $nsfw = "True";
     }
-} else {
-    header("Location: index.php");
-}
+    
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
