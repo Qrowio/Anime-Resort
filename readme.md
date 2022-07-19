@@ -10,7 +10,7 @@ Anime Resort is a website created with one goal in mind, to make it easier for p
  - [My Figma Design](https://www.figma.com/file/QYwaeQbh5k0CEGIVk5qf6A/Anime-Resort?node-id=0%3A1)
  - [My Discord](https://discord.gg/qrow)
  - [Kitsu API](https://github.com/matiassingers/awesome-readme)
- - [Live Version](https://anime.qrow.dev/)
+ - [Live Version](https://qrow.dev/anime)
 
 
 ## Appendix
